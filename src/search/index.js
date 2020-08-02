@@ -6,6 +6,7 @@ import './search.less';
 import logo from './images/logo.jpg';
 import '../../common';
 import { a } from './tree-shaking';
+import LargeNumber from 'larger-number';
 
 class Search extends React.Component {
 
@@ -14,6 +15,7 @@ class Search extends React.Component {
         this.state= {
             Text: null
         }
+        console.log(LargeNumber('1', '999'));
     }
     loadComponent() {
         import('./text.js').then((Text) => {

@@ -76,7 +76,6 @@ module.exports = {
             use: 
             [
                 'babel-loader',
-                'eslint-loader'
             ]
         }, {
             test: /.css$/,
