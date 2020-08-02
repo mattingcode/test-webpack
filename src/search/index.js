@@ -5,11 +5,32 @@ import ReactDOM from 'react-dom';
 import './search.less';
 import logo from './images/logo.jpg';
 import '../../common';
+import { a } from './tree-shaking';
 
 class Search extends React.Component {
+
+    constructor() {
+        super(...arguments);
+        this.state= {
+            Text: null
+        }
+    }
+    loadComponent() {
+        import('./text.js').then((Text) => {
+          this.setState({
+              Text: Text.default
+          })
+        });
+    }
     render() {
+        const { Text } = this.state;
+        const funcA = a();
         return <div className="search-text"> 
         Search tex
+        {
+            Text ? <Text /> : null
+        }
+        {  funcA }
         <img src={ logo }></img>
         </div>
     }
