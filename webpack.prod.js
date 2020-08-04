@@ -56,7 +56,17 @@ module.exports = {
           cssProcessor: require('cssnano')
       }),
       new CleanWebpackPlugin(),
-      new FriendlyErrorsPlugin(),
+      
+      function() {
+          this.hooks.done.tap('done', (stats) => {
+              if (stats.compilation.errors && 
+                stats.compilation.errors.length
+                && process.argv.indexOf('--watch') == -1) {
+                    console.log('build error', stats.compilation.errors);
+                    process.exit(1);
+                }
+          })
+      }
     //   new HtmlWebpackExternalsPlugin({
     //       externals: [{
     //           module: 'react',

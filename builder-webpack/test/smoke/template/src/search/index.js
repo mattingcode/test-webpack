@@ -3,7 +3,7 @@
 // import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import largeNumber from 'larger-number';
+import largeNumber from 'large-number';
 import logo from './images/logo.jpg';
 import './search.less';
 
