@@ -3,9 +3,10 @@
 // import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import largeNumber from 'larger-number';
+// import largeNumber from 'larger-number';
 import logo from './images/logo.jpg';
 import './search.less';
+import Hello from './hello';
 
 class Search extends React.Component {
 
@@ -27,10 +28,13 @@ class Search extends React.Component {
 
     render() {
         const { Text } = this.state;
-        const addResult = largeNumber('999', '1');
+        const addResult = 1;
         return <div className="search-text">
             {
                 Text ? <Text /> : null
+            }
+            {
+                Hello.helloworld()
             }
             { addResult }
             搜索文字的内容<img src={ logo } onClick={ this.loadComponent.bind(this) } />

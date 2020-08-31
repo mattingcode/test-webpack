@@ -3,7 +3,7 @@
 // import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import largeNumber from 'large-number';
+// import largeNumber from 'large-number';
 import logo from './images/logo.jpg';
 import './search.less';
 
@@ -27,7 +27,7 @@ class Search extends React.Component {
 
     render() {
         const { Text } = this.state;
-        const addResult = largeNumber('999', '1');
+        const addResult = 1;
         return <div className="search-text">
             {
                 Text ? <Text /> : null
